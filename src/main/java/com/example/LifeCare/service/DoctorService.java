@@ -55,7 +55,7 @@ public class DoctorService {
     public String removeDoctor(Long id){
         Doctor doctor = doctorRepo.findById(id).orElse(null);
         if(doctor!=null) {
-            doctorRepo.findById(id);
+            doctorRepo.deleteById(id);
             return "Doctor " + doctor.getName() + " removed successfully.";
         }
         else{
